@@ -55,6 +55,8 @@ Graphs/
 
 `wg2.py` - it is the example of the class
 
+Test
+
 ---
 
 ## Usage
