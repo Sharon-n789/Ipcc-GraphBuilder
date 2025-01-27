@@ -36,6 +36,7 @@ Here is the directory structure of the `GraphvizBuilder` project:
 Graphs/
 └── Ipcc-GraphBuilder/
      ├── README.md
+     ├── .gitignore
      └── src/
           ├── output/
                 ├── ar6_wgii_summary.svg
