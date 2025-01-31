@@ -20,9 +20,9 @@ class GraphVizBuilder:
         """
         self.graph = Digraph(name, format=output_format)
         self.graph.attr(rankdir=rankdir)
-        self.graph.attr("node", shape="ellipse", style="filled", color="lightgrey")
+        self.graph.attr("node", shape="circle", style="filled", color="lightgrey")
 
-    def add_node(self, node_id, label, url=None, color=None):
+    def add_node(self, node_id, label, url=None, color=None, importance=1):
         """
         Adds a node to the graph.
 
@@ -32,6 +32,21 @@ class GraphVizBuilder:
             url (str): (Optional) URL to associate with the node.
             color (str): (Optional) Background color for the node.
         """
+
+        # Dynamically adjust size based on importance (e.g., scale width/height)
+        size = 0.5 + (0.2 * importance) # Base size + increment per importance level
+        attributes = {
+            "URL": url if url else None,
+            "color": color if color else "lightgrey",
+            "width": str(size),
+            "fixedsize": "true", # Ensures the size remains fixed regardless of label   
+        }
+
+        # Remove None values from attributes
+        attributes = {k: v for k, v in attributes.items() if v is not None}
+
+        self.graph.node(node_id, label, **attributes)
+
         attributes = {"URL": url} if url else {}
         if color:
             attributes["color"] = color
