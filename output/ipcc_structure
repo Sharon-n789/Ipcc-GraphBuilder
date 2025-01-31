@@ -1,0 +1,21 @@
+digraph IPCC_Structure {
+	rankdir=TB
+	node [color=lightgrey shape=ellipse style=filled]
+	IPCC [label=IPCC URL="https://www.ipcc.ch/" color=lightyellow]
+	Plenary [label=Plenary URL="https://www.ipcc.ch/about/plenary/"]
+	Bureau [label=Bureau URL="https://www.ipcc.ch/about/bureau/"]
+	Secretariat [label=Secretariat URL="https://www.ipcc.ch/about/secretariat/"]
+	WG1 [label="Working Group I" URL="https://www.ipcc.ch/working-group/wg1/"]
+	WG2 [label="Working Group II" URL="https://www.ipcc.ch/working-group/wg2/"]
+	WG3 [label="Working Group III" URL="https://www.ipcc.ch/working-group/wg3/"]
+	TaskForce [label="Task Force" URL="https://www.ipcc.ch/taskforce/"]
+	Reports [label=Reports URL="https://www.ipcc.ch/reports/"]
+	IPCC -> Plenary
+	IPCC -> Bureau
+	IPCC -> Secretariat
+	IPCC -> WG1
+	IPCC -> WG2
+	IPCC -> WG3
+	IPCC -> TaskForce
+	IPCC -> Reports
+}

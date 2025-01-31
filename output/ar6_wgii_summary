@@ -1,0 +1,66 @@
+digraph AR6_WGII {
+	rankdir=TB
+	node [color=lightgrey shape=ellipse style=filled]
+	AR6 [label="AR6 WGII" URL="https://www.ipcc.ch/report/ar6/wg2/" color=lightblue]
+	SPM [label="Summary for Policymakers" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/summary-for-policymakers/"]
+	TS [label="Technical Summary" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/technical-summary/"]
+	FR [label="Full Report" URL="https://www.ipcc.ch/report/ar6/wg2/"]
+	CP [label=Chapters URL="https://www.ipcc.ch/report/ar6/wg2/" color=lightyellow]
+	CCP [label="Cross Chapters" URL="https://www.ipcc.ch/report/ar6/wg2/" color=lightgreen]
+	CP1 [label="Chapter 1" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-1/" color=lightcoral]
+	CP2 [label="Chapter 2" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-2/" color=lightcoral]
+	CP3 [label="Chapter 3" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-3/" color=lightcoral]
+	CP4 [label="Chapter 4" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-4/" color=lightcoral]
+	CP5 [label="Chapter 5" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-5/" color=lightcoral]
+	CP6 [label="Chapter 6" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-6/" color=lightcoral]
+	CP7 [label="Chapter 7" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-7/" color=lightcoral]
+	CP8 [label="Chapter 8" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-8/" color=lightcoral]
+	CP9 [label="Chapter 9" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-9/" color=lightcoral]
+	CP10 [label="Chapter 10" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-10/" color=lightcoral]
+	CP11 [label="Chapter 11" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-11/" color=lightcoral]
+	CP12 [label="Chapter 12" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-12/" color=lightcoral]
+	CP13 [label="Chapter 13" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-13/" color=lightcoral]
+	CP14 [label="Chapter 14" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-14/" color=lightcoral]
+	CP15 [label="Chapter 15" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-15/" color=lightcoral]
+	CP16 [label="Chapter 16" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-16/" color=lightcoral]
+	CP17 [label="Chapter 17" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-17/" color=lightcoral]
+	CP18 [label="Chapter 18" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-18/" color=lightcoral]
+	CPP1 [label="Cross-Chapter 1" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp1/" color=lightseagreen]
+	CPP2 [label="Cross-Chapter 2" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp2/" color=lightseagreen]
+	CPP3 [label="Cross-Chapter 3" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp3/" color=lightseagreen]
+	CPP4 [label="Cross-Chapter 4" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp4/" color=lightseagreen]
+	CPP5 [label="Cross-Chapter 5" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp5/" color=lightseagreen]
+	CPP6 [label="Cross-Chapter 6" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp6/" color=lightseagreen]
+	CPP7 [label="Cross-Chapter 7" URL="https://www.ipcc.ch/report/ar6/wg2/chapter/ccp7/" color=lightseagreen]
+	CP -> CP1
+	CP -> CP2
+	CP -> CP3
+	CP -> CP4
+	CP -> CP5
+	CP -> CP6
+	CP -> CP7
+	CP -> CP8
+	CP -> CP9
+	CP -> CP10
+	CP -> CP11
+	CP -> CP12
+	CP -> CP13
+	CP -> CP14
+	CP -> CP15
+	CP -> CP16
+	CP -> CP17
+	CP -> CP18
+	CCP -> CPP1
+	CCP -> CPP2
+	CCP -> CPP3
+	CCP -> CPP4
+	CCP -> CPP5
+	CCP -> CPP6
+	CCP -> CPP7
+	AR6 -> SPM
+	AR6 -> TS
+	AR6 -> FR
+	AR6 -> CP
+	AR6 -> CCP
+	margin=0.5 nodesep=1 rankdir=TB ranksep=1 size=auto
+}
