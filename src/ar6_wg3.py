@@ -58,7 +58,7 @@ for i in range(1, 18):
 
 # Glossary (Previously Annex)
 builder.add_node('FAQs', label='FAQs', 
-                 url='https://www.ipcc.ch/report/ar6/wg3/about/frequently-asked-questions', shape='oval', color='pink', weight="5")
+                 url='https://www.ipcc.ch/report/ar6/wg3/about/frequently-asked-questions', shape='oval', color='orange', weight="5")
 builder.add_edge('AR6 WGIII', 'FAQs')
 
 # Connecting AR6 WGIII to Main Sections
