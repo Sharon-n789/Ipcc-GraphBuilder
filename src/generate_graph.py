@@ -3,7 +3,7 @@ import os
 from graphviz import Digraph
 
 
-class GraphVizBuilder:
+class GraphVizBuilder1:
     """
     A modular class for creating and rendering Graphviz diagrams in SVG format.
     Includes default IPCC and AR6 WGII graphs but allows users to create custom graphs.
@@ -21,8 +21,9 @@ class GraphVizBuilder:
         self.graph = Digraph(name, format=output_format)
         self.graph.attr(rankdir=rankdir)
         self.graph.attr("node", shape="ellipse", style="filled", color="lightgrey")
+        self.graph.attr("edge", color="black", fontname="Arial", fontsize="10")
 
-    def add_node(self, node_id, label, url=None, color=None):
+    def add_node(self, node_id, label, url=None, color=None, shape="circle"):
         """
         Adds a node to the graph.
 
@@ -37,7 +38,7 @@ class GraphVizBuilder:
             attributes["color"] = color
         self.graph.node(node_id, label, **attributes)
 
-    def add_edge(self, from_node, to_node, label=None):
+    def add_edge(self, from_node, to_node, label=None, color="black", style="solid", arrowhead="normal"):
         """
         Adds an edge between two nodes.
 
@@ -46,10 +47,11 @@ class GraphVizBuilder:
             to_node (str): The ending node ID.
             label (str): (Optional) Label for the edge.
         """
+        edge_attributes = {"color": color, "style": style, "arrowhead": arrowhead}
         if label:
-            self.graph.edge(from_node, to_node, label=label)
+            self.graph.edge(from_node, to_node, label=label, **edge_attributes)
         else:
-            self.graph.edge(from_node, to_node)
+            self.graph.edge(from_node, to_node, **edge_attributes)
 
 
     def render_graph(self, output_file, open_in_browser=False):
