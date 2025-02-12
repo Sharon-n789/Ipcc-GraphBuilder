@@ -1,0 +1,89 @@
+ if open_in_browser:
+            try:
+                if os.path.exists(f"{filepath}.svg"):
+                    webbrowser.open(f'file:///{os.path.abspath(filepath)}.svg')  # Open with absolute path
+                else:
+                    print(f"File not found: {filepath}")
+            except Exception as e:
+                print(f"Error opening browser: {e}")
+
+
+
+ """
+        Adds a node to the graph.
+
+        Args:
+            node_id (str): Unique identifier for the node.
+            label (str): Display label for the node.
+            url (str): (Optional) URL to associate with the node.
+            color (str): (Optional) Background color for the node.
+        """
+        attributes = {"URL": url} if url else {}
+        if color:
+            attributes["color"] = color
+        self.graph.node(node_id, label, **attributes)
+
+
+
+For html view
+
+svg_path = self.graph.render(filepath, cleanup=True)
+        print(f"Graph saved as {filepath}.svg")
+
+        # If you want to open the SVG file in the browser
+        html_path = "graph_viewer.html"
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(f"""<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Graph Visualization</title>
+                <style>
+                    body {{
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        overflow: hidden;
+                        background-color: #f4f4f4;
+                    }}
+
+                    embed, iframe, object {{
+                        width: 100%;
+                        height: 100vh;
+                    }}
+
+                    @media (max-width: 1200px) {{
+                        embed, iframe, object {{
+                            width: 90%;
+                            height: 90vh;
+                        }}
+                    }}
+
+                    @media (max-width: 768px) {{
+                        embed, iframe, object {{
+                            width: 95%;
+                            height: 85vh;
+                        }}
+                    }}
+
+                    @media (max-width: 480px) {{
+                        embed, iframe, object {{
+                            width: 100%;
+                            height: 80vh;
+                        }}
+                        body {{
+                            flex-direction: column;
+                        }}
+                    }}
+                </style>
+            </head>
+            <body>
+                <embed src="{svg_path}" type="image/svg+xml" />
+            </body>
+            </html>""")
+
+        if open_in_browser:
+            webbrowser.open(html_path)

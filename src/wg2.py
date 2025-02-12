@@ -3,6 +3,8 @@ from generate_graph import GraphVizBuilder
 ar6_wg2 = GraphVizBuilder("AR6_WGII", rankdir="TB")  # Use top-to-bottom layout
 
 # Main Nodes (with light blue color)
+# Make an external file (JSON file ) for each working group to make it less repeat.
+
 ar6_wg2.add_node("AR6", "AR6 WGII", url="https://www.ipcc.ch/report/ar6/wg2/", color="lightblue")
 ar6_wg2.add_node("SPM", "Summary for Policymakers", url="https://www.ipcc.ch/report/ar6/wg2/chapter/summary-for-policymakers/")
 ar6_wg2.add_node("TS", "Technical Summary", url="https://www.ipcc.ch/report/ar6/wg2/chapter/technical-summary/")
@@ -33,14 +35,7 @@ ar6_wg2.add_edge("AR6", "FR")
 ar6_wg2.add_edge("AR6", "CP")
 ar6_wg2.add_edge("AR6", "CCP")
 
-# Adjusting graph attributes to provide more space
-ar6_wg2.graph.attr(
-    size="auto",        # Increase size to give more space
-    rankdir="TB",        # Use top-to-bottom layout
-    nodesep="1",         # Increase space between nodes
-    ranksep="1",         # Increase space between ranks (levels)
-    margin="0.5",        # Add margin around the graph to avoid tight borders
-)
+
 
 ar6_wg2.render_graph("ar6_wgii_summary", open_in_browser=True)
 
